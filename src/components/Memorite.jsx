@@ -82,7 +82,7 @@ const Card = ({ pokemon, isFlipped, onClick }) => {
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className="w-full h-full  rounded-xl  flex items-center justify-center">
-           <img src="/public/images/ball.png" alt="pokemons" />
+           <img src="/images/ball.png" alt="pokemons" />
           </div>
         </div>
         
