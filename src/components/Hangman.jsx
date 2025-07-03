@@ -138,11 +138,12 @@ const Modal = ({ title, message, onPlayAgain }) => {
     <div className="bg-gradient-to-r from-red-500 via-gray-900 to-white p-6 rounded-2xl shadow-2xl w-full max-w-md text-center">
       <h1 className="text-3xl font-bold mb-4">Hangman: Pokemon Edition</h1>
       {currentPokemon && (
-        <img
-          src={currentPokemon.image}
-          alt="Pokemon hint"
-          className="w-50 mx-auto mb-4"
-        />
+       <img
+      src={currentPokemon?.image}
+      alt={currentPokemon?.name}
+     className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto mb-4 object-contain"
+      />
+
       )}
       <Figure errors={wrongGuesses} />
       <div className="text-2xl font-mono tracking-widest mb-6">
