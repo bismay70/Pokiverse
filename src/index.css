@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #dfdff0;
+}
+
+@layer utilities {
+
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .mask-clip-path {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .hero-heading {
+    @apply uppercase font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+  }
+
+
+}
+
+
+
+
+
+
