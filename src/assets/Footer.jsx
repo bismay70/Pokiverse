@@ -31,7 +31,7 @@ const Footer = () => (
         {/* Developer Info with Image */}
         <div className="bg-black/30 rounded-lg p-4 text-center shadow-md backdrop-blur-sm">
           <img 
-            src="/public/images/bismay.jpg" 
+            src="/images/bismay.jpg" 
             alt="Developer"
             className="w-24 h-24 rounded-full mx-auto mb-2 object-cover border-2 border-white"
           />
