@@ -148,6 +148,25 @@ const Modal = ({ title, message, onPlayAgain }) => {
       <div className="text-2xl font-mono tracking-widest mb-6">
         {displayWord()}
       </div>
+
+      
+<div className="grid grid-cols-7 gap-2 mb-4">
+  {"abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
+    <button
+      key={letter}
+      onClick={() => handleGuess(letter)}
+      className={`py-1 px-2 rounded ${
+        guessedLetters.includes(letter)
+          ? "bg-gray-600 text-white"
+          : "bg-red-500 hover:bg-red-700 text-white"
+      }`}
+      disabled={guessedLetters.includes(letter) || gameOver || win}
+    >
+      {letter}
+    </button>
+  ))}
+</div>
+      
       <div className="mb-4 text-sm">
         <p>Wrong guesses: {wrongGuesses} / 6</p>
       </div>
