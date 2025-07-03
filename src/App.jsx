@@ -21,9 +21,9 @@ const App = () => {
   ];
 
   const games = [
-    { name: 'Hangman', component: Hangman, color: 'blue',img:"/public/images/hangman.png",p:<p className="text-gray-300 mb-8">Classic pokemon name guessing game </p> },
-    { name: 'PokeCrush', component: PokeCrush, color: 'purple',img:"/public/images/candy.jpeg",p: <p className="text-gray-300 mb-8">Match Pokemon in this exciting puzzle game!</p>},
-    { name: 'Memorite', component: Memorite, color: 'green',img:"/public/images/ball.png" ,p: <p className="text-gray-300 mb-8">Challenge your memory with this engaging game!</p>}
+    { name: 'Hangman', component: Hangman, color: 'blue',img:"/images/hangman.png",p:<p className="text-gray-300 mb-8">Classic pokemon name guessing game </p> },
+    { name: 'PokeCrush', component: PokeCrush, color: 'purple',img:"/images/candy.jpeg",p: <p className="text-gray-300 mb-8">Match Pokemon in this exciting puzzle game!</p>},
+    { name: 'Memorite', component: Memorite, color: 'green',img:"/images/ball.png" ,p: <p className="text-gray-300 mb-8">Challenge your memory with this engaging game!</p>}
   ];
 
   const handleGameSelect = (game) => {
