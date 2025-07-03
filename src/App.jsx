@@ -41,7 +41,7 @@ const App = () => {
           <div className="flex items-center space-x-3">
             <img
               className="w-10 h-10 animate-bounce"
-              src="/public/images/ball.png"
+              src="/images/ball.png"
               alt="logo"
             />
             <span className="text-blue-700 font-bold text-2xl">Pokiverse</span>
