@@ -141,7 +141,7 @@ const Modal = ({ title, message, onPlayAgain }) => {
        <img
       src={currentPokemon?.image}
       alt={currentPokemon?.name}
-     className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto mb-4 object-contain"
+     className="w-20 h-20 sm:w-16 sm:h-16 md:w-32 md:h-32 mx-auto mb-4 object-contain"
       />
 
       )}
