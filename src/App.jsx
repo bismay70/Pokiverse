@@ -85,7 +85,7 @@ const App = () => {
     >
       <div className="flex justify-between items-center px-4 py-4">
         <div className="flex items-center space-x-2">
-          <img className="w-8 h-8 animate-bounce" src="/public/images/ball.png" alt="logo" />
+          <img className="w-8 h-8 animate-bounce" src="/images/ball.png" alt="logo" />
           <span className="text-blue-700 font-bold text-xl">Pokiverse</span>
         </div>
         <button
