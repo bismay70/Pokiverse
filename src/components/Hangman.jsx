@@ -131,7 +131,7 @@ export default function Hangman() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-red-500 via-gray-900 to-white p-4">
-      <div className="bg-gradient-to-r from-red-500 via-gray-900 to-white5 p-6 rounded-2xl shadow-2xl w-full max-w-md text-center">
+      <div className="bg-gradient-to-r from-red-500 via-gray-900 to-white p-6 rounded-2xl shadow-2xl w-full max-w-md text-center">
         <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">
           Hangman: Pokemon Edition
         </h1>
@@ -141,6 +141,10 @@ export default function Hangman() {
             <img
               src={currentPokemon?.image}
               alt={currentPokemon?.name}
+              loading="lazy"
+              onError={(e) => {
+               e.target.src = "/images/pikachu.png"; 
+            }}
               className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain"
             />
           </div>
