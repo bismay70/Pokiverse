@@ -55,7 +55,7 @@ export default function Hangman() {
         const details = await Promise.all(promises);
         const fullList = details.map((r) => ({
           name: r.data.name,
-          image: r.data.sprites.front_default,
+          image: r.data.sprites.front_default || "pikachu.png",
         }));
         setPokemonList(fullList);
         pickRandomPokemon(fullList);
