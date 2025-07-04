@@ -170,7 +170,7 @@ export default function Hangman() {
           ))}
         </div>
         
-        <div className="mb-4 text-sm text-gray-700">
+        <div className="mb-4 text-sm text-white">
           <p>Wrong guesses: {wrongGuesses} / 6</p>
         </div>
         
