@@ -4,15 +4,13 @@
   <img src="./public/screenshot.png" alt="Project screenshot" width="800" style="max-width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15)" />
 </p>
 
-> A small, elegant Pokédex-style app built with **React** and **Vite** — browse Pokémon, view details, and enjoy a fast developer experience.
+> A fun-themed pokemon game app built with **React** and **Vite** — play Hangman,candy-Crush and matching in pokemon flavour.
 
 ---
 
 ## 🚀 Key Features
 
-- **Search & Filter** Pokémon by name or type
 - **Responsive** UI that looks great on desktop and mobile
-- **Detail View** with stats, abilities, and sprites
 - **Fast development** with Vite HMR and minimal setup
 - **ESLint** + sensible defaults for clean code
 
@@ -65,10 +63,15 @@ yarn preview
 
 ## 🛠️ Technologies
 
-- React
-- Vite
-- ESLint
-- Tailwind CSS / Other UI library
+- **React** (v19) — UI library
+- **Vite** — dev server & build tooling
+- **Tailwind CSS** — utility-first CSS framework
+- **GSAP** & **@gsap/react** — animations
+- **axios** — HTTP client for API requests
+- **react-router-dom** — client-side routing
+- **lucide-react** — icon set
+- **react-responsive** — responsive helpers
+- **ESLint** + related plugins — linting and code quality
 
 ---
 
