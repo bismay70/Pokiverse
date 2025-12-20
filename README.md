@@ -1,7 +1,7 @@
 # POKIVERSE — Pokemon Themed Fun Games (React + Vite) ⚡️
 
 <p align="center">
-  <img src="./screenshot.png" alt="Project screenshot" width="800" style="max-width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15)" />
+  <img src="./public/screenshot.png" alt="Project screenshot" width="800" style="max-width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15)" />
 </p>
 
 > A small, elegant Pokédex-style app built with **React** and **Vite** — browse Pokémon, view details, and enjoy a fast developer experience.
