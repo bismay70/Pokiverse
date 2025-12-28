@@ -1,81 +1,102 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className="relative bg-gradient-to-r from-black via-red-950 to-red-800 text-white mt-auto overflow-hidden">
-    
-    {/* Decorative glow */}
+  <footer className="relative bg-gradient-to-r from-black via-red-950 to-red-800 text-white overflow-hidden">
+
+    {/* Glow */}
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,0,0,0.15),_transparent_60%)] pointer-events-none" />
 
-    <div className="relative max-w-7xl mx-auto px-4 py-10">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+    <div className="relative max-w-7xl mx-auto px-6 py-14">
 
-        {/* GitHub */}
-        <a
-          href="https://github.com/bismay70"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-gray-300 hover:text-white transition group"
-        >
-          <svg
-            className="w-7 h-7 group-hover:scale-110 transition-transform"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.42 7.9 10.96.58.1.79-.25.79-.56 0-.28-.01-1.01-.01-1.98-3.22.7-3.9-1.55-3.9-1.55-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.74 1.26 3.41.96.1-.75.41-1.26.74-1.55-2.57-.3-5.28-1.28-5.28-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.5.12-3.12 0 0 .98-.31 3.2 1.18.94-.26 1.95-.39 2.95-.39 1 .01 2.01.14 2.95.39 2.22-1.49 3.2-1.18 3.2-1.18.64 1.62.24 2.82.12 3.12.75.81 1.2 1.84 1.2 3.1 0 4.43-2.72 5.39-5.3 5.68.42.36.79 1.1.79 2.22 0 1.6-.01 2.89-.01 3.28 0 .31.2.67.8.55C20.7 21.41 24 17.1 24 12c0-6.35-5.15-11.5-11.5-11.5z"
-            />
-          </svg>
-          <span className="font-medium">GitHub</span>
-        </a>
+      {/* MAIN GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
 
-        {/* Developer Card */}
-        <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 text-center shadow-lg border border-red-800/40 hover:scale-105 transition">
-          <img
-            src="/images/bismay.jpg"
-            alt="Developer"
-            className="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-2 border-red-600 shadow-md"
-          />
-          <h3 className="font-semibold text-lg tracking-wide">
-            Bismay Samal
+        {/* LEFT — ABOUT */}
+        <div>
+          <h3 className="text-xl font-bold mb-4 text-red-400">
+            About Pokiverse
           </h3>
-          <p className="text-gray-300 text-sm">Full Stack Developer</p>
+          <ul className="space-y-3 text-gray-300 list-disc list-inside">
+            <li>🪢 Pokémon Hangman — classic word game with a Poké twist</li>
+            <li>🧠 Memorite — sharpen your memory with Pokémon cards</li>
+            <li>🍬 Candy Crush–style Pokémon puzzle fun</li>
+            <li>⚡ Designed to challenge your mind & keep it fun</li>
+          </ul>
         </div>
 
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/bismay-samal-134b75312"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-gray-300 hover:text-white transition group"
-        >
-          <svg
-            className="w-7 h-7 group-hover:scale-110 transition-transform"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 
-            0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 
-            19h-3v-10h3v10zm-1.5-11.25c-.97 
-            0-1.75-.78-1.75-1.75s.78-1.75 
-            1.75-1.75 1.75.78 1.75 
-            1.75-.78 1.75-1.75 
-            1.75zm13.5 11.25h-3v-5.5c0-1.1-.9-2-2-2s-2 
-            .9-2 2v5.5h-3v-10h3v1.25c.8-1.1 
-            2.2-1.75 3.5-1.75 2.49 0 4.5 2.01 
-            4.5 4.5v6z"/>
-          </svg>
-          <span className="font-medium">LinkedIn</span>
-        </a>
+        {/* MIDDLE — DEVELOPER */}
+        <div className="flex flex-col items-center text-center gap-5">
+
+          <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-lg border border-red-800/40">
+            <img
+              src="/images/bismay.jpg"
+              alt="Developer"
+              className="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-2 border-red-600"
+            />
+            <h3 className="font-semibold text-lg">Bismay Samal</h3>
+            <p className="text-gray-300 text-sm mb-4">
+              Full Stack Developer
+            </p>
+
+            {/* SOCIALS */}
+            <div className="flex justify-center gap-6">
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/bismay70"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition"
+              >
+                GitHub
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/bismay-samal-134b75312"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition"
+              >
+                LinkedIn
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT — CTA */}
+        <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4">
+          <h3 className="text-xl font-bold text-red-400">
+            Your Experience?
+          </h3>
+
+          <p className="text-gray-300">
+            Loved the games?  
+            Jump back in and catch the fun again!
+          </p>
+
+          <div className="flex items-center gap-2 text-red-400 font-semibold">
+            <span>Play here</span>
+            <span className="text-2xl">→</span>
+          </div>
+
+          {/* Placeholder Pokémon image */}
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            alt="Play Pokemon"
+            className="w-32 h-32 object-contain opacity-90 hover:scale-105 transition animate-bounce"
+          />
+        </div>
       </div>
 
-      {/* Bottom line */}
-      <div className="mt-10 pt-4 border-t border-red-700/50 text-center">
+      {/* BOTTOM */}
+      <div className="mt-14 pt-4 border-t border-red-700/50 text-center">
         <p className="text-gray-400 text-sm">
           © 2025 <span className="text-red-500 font-semibold">Pokiverse</span> • Made with ❤️ by <span className="text-white">bismay70</span>
         </p>
       </div>
+
     </div>
   </footer>
 );

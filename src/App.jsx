@@ -148,7 +148,7 @@ const App = () => {
           {games.map((game) => (
             <div
               key={game.name}
-              className="bg-gradient-to-r from-red-500 via-gray-900 to-gray-600 rounded-lg p-8 text-center hover:transform hover:scale-105 transition-all cursor-pointer shadow-lg"
+              className="bg-gradient-to-r from-red-950 via-red-900 to-red-800 rounded-lg p-8 text-center hover:transform hover:scale-105 transition-all cursor-pointer shadow-lg"
               onClick={() => handleGameSelect(game)}
             >
               <div className={`w-30 h-30 bg-${game.color}-500 rounded-lg mx-auto mb-4 flex items-center justify-center`}>

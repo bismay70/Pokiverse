@@ -275,7 +275,7 @@ const PokeCrush = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800 p-2 sm:p-4 lg:p-6 xl:p-8">
+    <div className="min-h-screen cursor-pointer bg-gradient-to-r from-black via-red-950 to-red-800 p-2 sm:p-4 lg:p-6 xl:p-8">
       <div className="max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-4 sm:mb-6 lg:mb-8">
@@ -296,7 +296,7 @@ const PokeCrush = () => {
               <div className="text-gray-300 text-xs sm:text-sm lg:text-base">Score</div>
             </div>
             <div className="text-center">
-              <div className="text-blue-400 font-bold text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+              <div className="text-red-400 font-bold text-lg sm:text-xl lg:text-2xl xl:text-3xl">
                 {moves}
               </div>
               <div className="text-gray-300 text-xs sm:text-sm lg:text-base">Moves</div>
@@ -313,7 +313,7 @@ const PokeCrush = () => {
           
           <button
             onClick={resetGame}
-            className="bg-blue-600 hover:bg-blue-700 text-white p-2 sm:p-3 lg:p-4 rounded-lg transition-colors"
+            className="bg-red-600 hover:bg-red-700 text-white p-2 sm:p-3 lg:p-4 rounded-lg transition-colors"
           >
             <RotateCcw size={18} className="sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
           </button>
@@ -350,7 +350,7 @@ const PokeCrush = () => {
               <div className="space-y-3 sm:space-y-4">
                 <button
                   onClick={resetGame}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 rounded-lg transition-colors text-sm sm:text-base lg:text-lg"
+                  className="w-full cursor-pointer bg-red-600 hover:bg-red-700 text-white font-bold py-2 sm:py-3 lg:py-4 px-4 sm:px-6 lg:px-8 rounded-lg transition-colors text-sm sm:text-base lg:text-lg"
                 >
                   Play Again
                 </button>
