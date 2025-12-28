@@ -2,16 +2,13 @@ import React from "react";
 
 const Footer = () => (
   <footer className="relative bg-gradient-to-r from-black via-red-950 to-red-800 text-white overflow-hidden">
-
-    {/* Glow */}
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,0,0,0.15),_transparent_60%)] pointer-events-none" />
 
     <div className="relative max-w-7xl mx-auto px-6 py-14">
 
-      {/* MAIN GRID */}
+    
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
 
-        {/* LEFT — ABOUT */}
         <div>
           <h3 className="text-xl font-bold mb-4 text-red-400">
             About Pokiverse
@@ -24,7 +21,7 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* MIDDLE — DEVELOPER */}
+     
         <div className="flex flex-col items-center text-center gap-5">
 
           <div className="bg-black/40 backdrop-blur-md rounded-xl p-6 shadow-lg border border-red-800/40">
@@ -38,10 +35,10 @@ const Footer = () => (
               Full Stack Developer
             </p>
 
-            {/* SOCIALS */}
+           
             <div className="flex justify-center gap-6">
 
-              {/* GitHub */}
+            
               <a
                 href="https://github.com/bismay70"
                 target="_blank"
@@ -51,7 +48,7 @@ const Footer = () => (
                 GitHub
               </a>
 
-              {/* LinkedIn */}
+              
               <a
                 href="https://www.linkedin.com/in/bismay-samal-134b75312"
                 target="_blank"
@@ -65,7 +62,7 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* RIGHT — CTA */}
+      
         <div className="flex flex-col items-center md:items-end text-center md:text-right gap-4">
           <h3 className="text-xl font-bold text-red-400">
             Your Experience?
@@ -81,7 +78,7 @@ const Footer = () => (
             <span className="text-2xl">→</span>
           </div>
 
-          {/* Placeholder Pokémon image */}
+      
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
             alt="Play Pokemon"
@@ -90,7 +87,7 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* BOTTOM */}
+   
       <div className="mt-14 pt-4 border-t border-red-700/50 text-center">
         <p className="text-gray-400 text-sm">
           © 2025 <span className="text-red-500 font-semibold">Pokiverse</span> • Made with ❤️ by <span className="text-white">bismay70</span>

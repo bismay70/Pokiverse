@@ -4,10 +4,13 @@ import { Menu, X,  } from 'lucide-react';
 import PokeCrush from './components/PokeCrush';
 import Hangman from './components/Hangman'; 
 import Memorite from './components/Memorite';
-import Hero from './assets/Hero';
-import AboutPage from './assets/AboutPage';
-import Footer from './assets/Footer'; 
+import Hero from './components/Hero';
+import AboutPage from './components/AboutPage';
+import Footer from './components/Footer'; 
 import Clients from './components/clients';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Games from './components/games';
 
 
 const App = () => {
@@ -32,141 +35,65 @@ const App = () => {
   };
 
 
-  const Navbar = () => (
-  <>
-  
-    <nav className="bg-gradient-to-r from-black via-red-950 to-red-800
-  mx-4 mt-4 shadow-lg z-40 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-      
-          <div className="flex items-center space-x-3">
-            <img
-              className="w-10 h-10 animate-bounce"
-              src="/images/ball.png"
-              alt="logo"
-            />
-            <span className="text-blue-700 font-bold text-2xl">Pokiverse</span>
-          </div>
-
-          <div className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <button
-                key={item.route}
-                onClick={() => {
-                  setCurrentRoute(item.route);
-                  setSelectedGame(null);
-                }}
-                className={`text-white hover:text-blue-400 px-3 py-2 rounded-md text-lg font-medium transition-colors ${
-                  currentRoute === item.route ? 'text-blue-400' : ''
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-         
-          <div className="md:hidden z-50">
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="text-white hover:text-blue-400 p-2"
-            >
-              <Menu size={28} />
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-
-    <div
-      className={`fixed top-0 right-0 h-full w-[70%] bg-gradient-to-r from-black via-red-950 to-red-800 z-50 transform transition-transform duration-300 ease-in-out ${
-        isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`}
-    >
-      <div className="flex justify-between items-center px-4 py-4">
-        <div className="flex items-center space-x-2">
-          <img className="w-8 h-8 animate-bounce" src="/images/ball.png" alt="logo" />
-          <span className="text-blue-700 font-bold text-xl">Pokiverse</span>
-        </div>
-        <button
-          onClick={() => setIsMobileMenuOpen(false)}
-          className="text-white hover:text-blue-400 p-2"
-        >
-          <X size={28} />
-        </button>
-      </div>
-
-      <div className="flex flex-col space-y-6 px-6 mt-8">
-        {navigation.map((item) => (
-          <button
-            key={item.route}
-            onClick={() => {
-              setCurrentRoute(item.route);
-              setSelectedGame(null);
-              setIsMobileMenuOpen(false);
-            }}
-            className={`text-white text-left text-lg font-semibold hover:text-blue-400 transition-colors ${
-              currentRoute === item.route ? 'text-blue-400' : ''
-            }`}
-          >
-            {item.name}
-          </button>
-        ))}
-      </div>
-    </div>
-  </>
-);
-
-
 
   const HomePage = () => (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      <Hero/>
-      <p className="text-gray-300 text-xl md:text-2xl text-center max-w-2xl mb-12">
-        Welcome to POKIVERSE! Explore my collection of fun and easy games.
-      </p>
-      <button
-        onClick={() => setCurrentRoute('games')}
-        className="bg-red-600 hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg"
-      >
-        Start Playing
-      </button>
-    </div>
+    <Home setCurrentRoute={setCurrentRoute} />
   );
 
-  const GamesPage = () => {
-    if (selectedGame) {
-      const GameComponent = selectedGame.component;
-      return <GameComponent />;
-    }
+const GamesPage = () => {
+  if (selectedGame) {
+    const GameComponent = selectedGame.component;
+    return <GameComponent />;
+  }
 
-    return (
-      <div className="min-h-screen py-16 px-4">
-        <h1 className="text-5xl font-bold text-white text-center mb-12">Choose Your Game</h1>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+  return (
+    <section className="w-full min-h-screen py-[150px] max-lg:py-[80px] bg-gradient-to-r from-black via-red-950 to-red-800 flex justify-center items-center flex-col overflow-hidden">
+      <div className="w-[90%] max-sm:w-[95%] flex flex-col gap-[48px] items-center">
+        <h1 className="text-white font-montserrat text-[8vw] font-black leading-none text-center">
+          Choose Your Game
+        </h1>
+
+        <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-8 w-full">
           {games.map((game) => (
             <div
               key={game.name}
-              className="bg-gradient-to-r from-red-950 via-red-900 to-red-800 rounded-lg p-8 text-center hover:transform hover:scale-105 transition-all cursor-pointer shadow-lg"
-              onClick={() => handleGameSelect(game)}
+              className="rounded-[32px] p-6 flex flex-col justify-between shadow-lg"
+              style={{ backgroundColor: game.color === 'blue' ? '#8B0000' : game.color === 'purple' ? '#990000' : '#6B0F0F' }}
             >
-              <div className={`w-30 h-30 bg-${game.color}-500 rounded-lg mx-auto mb-4 flex items-center justify-center`}>
-                <img src={game.img} alt={game.name} className="w-20 h-20 object-contain" />
-
+           
+              <div className="flex justify-between items-center mb-4">
+                <h1 className="font-montserrat font-bold text-[24px] text-white">
+                  {game.name}
+                </h1>
+                <h3 className="font-montserrat font-bold text-[16px] text-white">
+                  Pokemon Edition
+                </h3>
               </div>
-              <h3 className="text-white text-2xl font-bold mb-4">{game.name}</h3>
-              <p className="text-gray-300 mb-6">{game.p}</p>
-              <button className=' text-white font-bold py-2 px-6 rounded-full bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 transition-all transform hover:scale-105'>
-                Play
-              </button>
+
+    
+              <img
+                src={game.img}
+                alt={game.name}
+                className="w-full h-32 object-contain my-4 image"
+              />
+
+              <div className="flex flex-col gap-4">
+                <p className="text-white text-[18px]">{game.p.props.children}</p>
+                <button
+                  onClick={() => handleGameSelect(game)}
+                  className="px-[24px] py-[10px] bg-black border-2 border-black rounded-[32px] text-[#bf4613] font-montserrat font-bold hover:bg-[#de7c7c] hover:text-black transition text-[16px] w-fit"
+                >
+                  Play Now
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    );
-  };
+    </section>
+  );
+};
+
 
 
   const renderCurrentPage = () => {
@@ -185,14 +112,19 @@ const App = () => {
   // bg-gradient-to-r from-red-500 via-gray-900 to-white
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800
- flex flex-col">
-      
-      <Navbar />
+    <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800 flex flex-col">
+      <Navbar
+        navigation={navigation}
+        currentRoute={currentRoute}
+        setCurrentRoute={setCurrentRoute}
+        setSelectedGame={setSelectedGame}
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
       <main className="flex-grow">
         {renderCurrentPage()}
       </main>
-     <Clients/>
+      {/* Remove global Games rendering; Games shows within Home now */}
       <Footer />
     </div>
   );

@@ -1,12 +1,14 @@
 import React from "react";
-import ProfilePhoto from "/public/images/ball.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+// Use public asset via root-served URL (do not import from /public)
+const ProfilePhoto = "/images/ball.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
-const ClientPage = () => {
+const ClientPage = ({ setCurrentRoute }) => {
   useGSAP(() => {
     gsap.from("#client", {
       scale: 1.5,
@@ -18,7 +20,7 @@ const ClientPage = () => {
   });
 
   return (
-    <section className="w-full min-h-screen py-[200px] max-lg:py-[70px] max-md:py-[60px] max-sm:py-[80px] bg-black flex justify-center items-center flex-col">
+    <section className="w-full min-h-screen py-[200px] max-lg:py-[70px] max-md:py-[60px] max-sm:py-[80px] bg-gradient-to-r from-black via-red-950 to-red-800 flex justify-center items-center flex-col">
       <div className="w-[1200px] max-lg:w-[90%] max-sm:w-[95%] flex flex-col gap-[64px] max-sm:gap-[32px] items-center">
 
         <div className="w-full overflow-hidden">
@@ -36,7 +38,7 @@ const ClientPage = () => {
           {[1, 2, 3].map((_, index) => (
             <div
               key={index}
-              className="rounded-[48px] max-md:rounded-[40px] h-[400px] max-lg:h-[450px] max-md:h-[500px] max-sm:h-[530px] sticky top-[100px] bg-[#892914] p-10 py-20 max-sm:p-6"
+              className="rounded-[48px] max-md:rounded-[40px] h-[400px] max-lg:h-[450px] max-md:h-[500px] max-sm:h-[530px] sticky top-[100px] bg-[#994431] p-10 py-20 max-sm:p-6"
             >
               <div className="flex flex-col justify-between h-full">
                 <p className="text-[24px] max-md:text-[16px] font-montserrat leading-[120%] font-medium">
@@ -68,6 +70,7 @@ const ClientPage = () => {
 
 
         <button 
+        onClick={() => setCurrentRoute && setCurrentRoute('games')}
         className="rounded-[48px] bg-white px-[32px] py-[14px] text-[24px] max-sm:text-[20px] text-black hover:bg-[#ab471c] font-montserrat font-bold border-2 border-black transition-all duration-300">
           Play Now
         </button>
