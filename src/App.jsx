@@ -80,7 +80,7 @@ const App = () => {
 
 
     <div
-      className={`fixed top-0 right-0 h-full w-[70%] bg-gradient-to-l from-red-500 via-gray-900 to-white z-50 transform transition-transform duration-300 ease-in-out ${
+      className={`fixed top-0 right-0 h-full w-[70%] bg-gradient-to-r from-black via-red-950 to-red-800 z-50 transform transition-transform duration-300 ease-in-out ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >

@@ -44,7 +44,7 @@ const Modal = ({ title, message, onPlayAgain }) => {
         <p className="mb-4">{message}</p>
         <button
           onClick={onPlayAgain}
-          className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition-colors min-h-[44px]"
+          className="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition-colors min-h-[44px]"
         >
           Play Again
         </button>
@@ -130,65 +130,72 @@ export default function Hangman() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-red-500 via-gray-900 to-white p-4">
-      <div className="bg-gradient-to-r from-black via-red-950 to-red-800 p-6 rounded-2xl shadow-2xl w-full max-w-md text-center">
-        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-          Hangman: Pokemon Edition
-        </h1>
-        
-        {currentPokemon && (
-          <div className="mb-4">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-red-500 via-gray-900 to-white p-4">
+    <div className="bg-gradient-to-r from-black via-red-950 to-red-800 p-6 rounded-2xl shadow-2xl w-full max-w-5xl">
+
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
+        Hangman: Pokémon Edition
+      </h1>
+
+   
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+     
+        <div className="flex flex-col items-center justify-center">
+
+          {currentPokemon && (
             <img
-              src={currentPokemon?.image}
-              alt={currentPokemon?.name}
+              src={currentPokemon.image}
+              alt={currentPokemon.name}
               loading="lazy"
-              onError={(e) => {
-               e.target.src = "/images/pikachu.png"; 
-            }}
-              className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain"
+              onError={(e) => (e.target.src = "/images/pikachu.png")}
+              className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 drop-shadow-lg"
             />
-          </div>
-        )}
-        
-        <Figure errors={wrongGuesses} />
-        
-        <div className="text-xl md:text-2xl font-mono tracking-widest mb-6 text-white">
-          {displayWord()}
+          )}
+
+          <Figure errors={wrongGuesses} />
         </div>
 
-       
-        <div className="grid grid-cols-5 sm:grid-cols-7 gap-2 mb-4">
-          {"abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
-            <button
-              key={letter}
-              onClick={() => handleGuess(letter)}
-              className={`py-2 px-1 rounded text-sm font-medium min-h-[44px] transition-colors ${
-                guessedLetters.includes(letter)
-                  ? "bg-gray-400 text-white cursor-not-allowed"
-                  : "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white"
-              }`}
-              disabled={guessedLetters.includes(letter) || gameOver || win}
-            >
-              {letter.toUpperCase()}
-            </button>
-          ))}
+     
+        <div className="text-center">
+
+          <div className="text-2xl md:text-3xl font-mono tracking-widest mb-6 text-white">
+            {displayWord()}
+          </div>
+
+          <div className="grid grid-cols-7 gap-2 mb-4">
+            {"abcdefghijklmnopqrstuvwxyz".split("").map((letter) => (
+              <button
+                key={letter}
+                onClick={() => handleGuess(letter)}
+                className={`py-2 rounded text-sm font-semibold min-h-[44px] transition-all ${
+                  guessedLetters.includes(letter)
+                    ? "bg-gray-500 cursor-not-allowed"
+                    : "bg-red-600 hover:bg-red-700 active:scale-95"
+                } text-white`}
+                disabled={guessedLetters.includes(letter) || gameOver || win}
+              >
+                {letter.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+          <p className="text-white mb-4">
+            Wrong guesses: {wrongGuesses} / 6
+          </p>
+
+          <button
+            onClick={() => pickRandomPokemon(pokemonList)}
+            className="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg text-white font-medium transition min-h-[44px]"
+          >
+            Play Again
+          </button>
         </div>
-        
-        <div className="mb-4 text-sm text-white">
-          <p>Wrong guesses: {wrongGuesses} / 6</p>
-        </div>
-        
-        <button
-          onClick={() => pickRandomPokemon(pokemonList)}
-          className="px-6 py-3 bg-red-600 hover:bg-red-700 active:bg-red-800 rounded-lg text-white font-medium transition-colors min-h-[44px]"
-        >
-          Play Again
-        </button>
       </div>
 
       {(win || gameOver) && (
         <Modal
-          title={win ? "🎉 Congratulations!" : " Game Over!"}
+          title={win ? "🎉 Congratulations!" : "💀 Game Over!"}
           message={
             win
               ? "You guessed the Pokémon correctly!"
@@ -198,5 +205,6 @@ export default function Hangman() {
         />
       )}
     </div>
-  );
+  </div>
+);
 }
