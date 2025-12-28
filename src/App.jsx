@@ -34,7 +34,8 @@ const App = () => {
   const Navbar = () => (
   <>
   
-    <nav className="bg-gradient-to-r from-white via-gray-900 to-red-500 rounded-full mx-4 mt-4 shadow-lg z-40 relative">
+    <nav className="bg-gradient-to-r from-black via-red-950 to-red-800
+  mx-4 mt-4 shadow-lg z-40 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
       
@@ -183,7 +184,8 @@ const App = () => {
   // bg-gradient-to-r from-red-500 via-gray-900 to-white
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-500 via-gray-900 to-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800
+ flex flex-col">
       
       <Navbar />
       <main className="flex-grow">
