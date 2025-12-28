@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;600;700&display=swap');
 @import "tailwindcss";
+
 
 body {
   width: 100dvw;
   overflow-x: hidden;
   background-color: #dfdff0;
+  font-family: 'Shantell Sans', cursive;
 }
 
 @layer utilities {

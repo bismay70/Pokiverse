@@ -275,7 +275,7 @@ const PokeCrush = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-500 via-gray-900 to-white p-2 sm:p-4 lg:p-6 xl:p-8">
+    <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800 p-2 sm:p-4 lg:p-6 xl:p-8">
       <div className="max-w-lg sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-4 sm:mb-6 lg:mb-8">

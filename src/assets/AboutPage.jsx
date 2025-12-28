@@ -5,10 +5,10 @@ gsap.registerPlugin(ScrollTrigger)
     
 
 const AboutPage = () => (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen py-16 px-4 font-shantell">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-5xl font-bold text-white mb-8">About Pokiverse</h1>
-        <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-red-500 rounded-lg p-8 shadow-lg">
+        <div className="bg-gradient-to-r from-black via-red-950 to-red-800 rounded-lg p-8 shadow-lg">
           <p className="text-gray-300 text-lg mb-6">
             Pokiverse is a collection of engaging pokemon games designed to challenge your mind and provide endless entertainment.
           </p>

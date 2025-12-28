@@ -110,7 +110,7 @@ const Card = ({ pokemon, isFlipped, onClick }) => {
 
 const Board = ({ pokemons, flippedCards, matchedPairs, handleCardClick }) => {
   return (
-    <div className="grid grid-cols-4 md:grid-cols-5 gap-3 md:gap-6 justify-center mx-auto p-4 bg-gradient-to-r from-white via-gray-900 to-red-500 rounded-2xl shadow-xl max-w-4xl">
+    <div className="grid grid-cols-4 md:grid-cols-5 gap-3 md:gap-6 justify-center mx-auto p-4 bg-gradient-to-r from-black via-red-950 to-red-800 rounded-2xl shadow-xl max-w-4xl">
       {pokemons.map((pokemon) => (
         <Card
           key={pokemon.id}
