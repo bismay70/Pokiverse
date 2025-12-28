@@ -7,6 +7,7 @@ import Memorite from './components/Memorite';
 import Hero from './assets/Hero';
 import AboutPage from './assets/AboutPage';
 import Footer from './assets/Footer'; 
+import Clients from './components/clients';
 
 
 const App = () => {
@@ -191,7 +192,7 @@ const App = () => {
       <main className="flex-grow">
         {renderCurrentPage()}
       </main>
-     
+     <Clients/>
       <Footer />
     </div>
   );

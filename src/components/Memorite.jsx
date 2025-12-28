@@ -184,7 +184,7 @@ function Memorite() {
   const progressValue = (matchedPairs.length / initialPokemons.length) * 100
 
   return (
-    <div className="min-h-screen  bg-gradient-to-r from-red-500 via-gray-900 to-white flex flex-col items-center justify-center p-4 md:p-6">
+    <div className="min-h-screen  bg-gradient-to-r from-black via-red-950 to-red-800 flex flex-col items-center justify-center p-4 md:p-6">
     
       <div className="text-center mb-6 md:mb-8">
         <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-yellow-600 mb-2 md:mb-4 drop-shadow-lg">
@@ -204,7 +204,7 @@ function Memorite() {
       <div className="w-full max-w-md mb-6 md:mb-8">
         <div className="bg-gray-200 rounded-full h-4 md:h-6 overflow-hidden shadow-inner">
           <div 
-            className="bg-gradient-to-r from-green-400 to-blue-500 h-full rounded-full transition-all duration-500 ease-out shadow-lg"
+            className="bg-gradient-to-r from-red-600 to-red-950 h-full rounded-full transition-all duration-500 ease-out shadow-lg"
             style={{ width: `${progressValue}%` }}
           />
         </div>
@@ -231,15 +231,15 @@ function Memorite() {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
           <div className="bg-white rounded-2xl p-6 md:p-8 text-center shadow-2xl max-w-sm md:max-w-md w-full mx-4 transform animate-bounce">
             <div className="text-6xl md:text-8xl mb-4">🎉</div>
-            <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-red-950 mb-4">
               Congratulations!
             </h2>
             <p className="text-gray-700 text-lg md:text-xl mb-6">
-              You matched all Pokemons in <span className="font-bold text-blue-600">{moves}</span> moves!
+              You matched all Pokemons in <span className="font-bold text-red-600">{moves}</span> moves!
             </p>
             <button
               onClick={resetGame}
-              className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg md:text-xl rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-red-500 to-red-600 text-white font-bold text-lg md:text-xl rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
              Play Again
             </button>
