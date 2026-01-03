@@ -21,7 +21,7 @@ const AboutPage = () => (
         </div>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-[20px]">
           <div className="text-center bg-gradient-to-r from-gray-700 via-gray-900 to-red-500 shadow-md p-6 rounded-lg">
-           <img src="/images/pikachu.png" alt="" />
+           <img className="animate-bounce" src="/images/pikachu.png" alt="" />
             <h3 className="text-xl font-semibold text-white">
             ⚡ Fast-Paced Fun
             </h3>
@@ -31,7 +31,7 @@ const AboutPage = () => (
           </div>
 
           <div className="text-center bg-gradient-to-r from-gray-700 via-gray-900 to-red-500 shadow-md p-6 rounded-lg">
-           <img src="/images/pikachu.png" alt="" />
+           <img className="animate-bounce" src="/images/pikachu.png" alt="" />
             <h3 className="text-xl font-semibold text-white">
               🔥 For True Pokemon Fans
             </h3>
@@ -41,7 +41,7 @@ const AboutPage = () => (
           </div>
 
           <div className="text-center bg-gradient-to-r from-gray-700 via-gray-900 to-red-500 shadow-md p-6 rounded-lg">
-           <img src="/images/pikachu.png" alt="" />
+           <img className="animate-bounce" src="/images/pikachu.png" alt="" />
             <h3 className="text-xl font-semibold text-white">
               ❤️ Player Approved
             </h3>

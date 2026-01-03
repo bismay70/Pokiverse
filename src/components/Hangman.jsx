@@ -130,11 +130,11 @@ export default function Hangman() {
   }
 
   return (
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-red-500 via-gray-900 to-white p-4">
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-black via-red-950 to-red-800 p-4">
     <div className="bg-gradient-to-r from-black via-red-950 to-red-800 p-6 rounded-2xl shadow-2xl w-full max-w-5xl">
 
       <h1 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
-        Hangman: Pokémon Edition
+        Hangman: Pokemon Edition
       </h1>
 
    
