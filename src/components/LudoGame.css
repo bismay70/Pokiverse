@@ -1,0 +1,171 @@
+
+.ludo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-width: 95vw;
+}
+
+.ludo {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-image: url('/images/ludo-board.png'); /* User mentioned ludo.png, using a fallback or direct path if exists */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white; /* Fallback */
+    border: 10px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* If no image, we can build it with CSS but user specifically mentioned ludo.png logic */
+.ludo-board-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    width: 100%;
+    height: 100%;
+}
+
+.player-pieces {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.player-piece {
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.player-piece.highlight {
+    animation: pulse 1s infinite alternate;
+    z-index: 101;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 5px rgba(255,255,0,0.5); }
+    to { transform: scale(1.2); box-shadow: 0 0 20px rgba(255,255,0,1); }
+}
+
+.player-piece[player-id="P1"] { background-color: #ff3e3e; }
+.player-piece[player-id="P2"] { background-color: #3eff3e; }
+.player-piece[player-id="P3"] { background-color: #3e3eff; }
+.player-piece[player-id="P4"] { background-color: #ffff3e; }
+
+/* PokeBall Styling */
+.player-piece::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    border-radius: 50% 50% 0 0;
+    background: rgba(255,255,255,0.2);
+}
+
+.player-piece::after {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+}
+
+.roll-btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border: 2px solid rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.roll-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.roll-btn[player-id="P1"] { background: #df2c2c; color: white; }
+.roll-btn[player-id="P2"] { background: #2cdf2c; color: black; }
+.roll-btn[player-id="P3"] { background: #2c2cdf; color: white; }
+.roll-btn[player-id="P4"] { background: #dfdf2c; color: black; }
+
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    min-width: 120px;
+}
+
+.dice-value {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.active-player-info {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.active-player-name {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 5px;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 700px) {
+    .ludo {
+        width: 350px;
+        height: 350px;
+    }
+    .controls {
+        grid-template-columns: 1fr;
+    }
+}
