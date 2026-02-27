@@ -23,20 +23,20 @@ const COORDINATES_MAP = {
 const STEP_LENGTH = 6.66;
 const PLAYERS = ['P1', 'P2', 'P3', 'P4'];
 const BASE_POSITIONS = {
-    P1: [500, 501, 502, 503], // Red (Bottom-Left)
+    P4: [500, 501, 502, 503], // Blue (Bottom-Left)
     P2: [700, 701, 702, 703], // Yellow (Top-Left)
     P3: [600, 601, 602, 603], // Green (Top-Right)
-    P4: [800, 801, 802, 803], // Blue (Bottom-Right)
+    P1: [800, 801, 802, 803], // Red (Bottom-Right)
 };
-const START_POSITIONS = { P1: 0, P2: 13, P3: 26, P4: 39 };
+const START_POSITIONS = { P1: 39, P2: 13, P3: 26, P4: 0 };
 const HOME_ENTRANCE = {
-    P1: [100, 101, 102, 103, 104], // Red
+    P4: [100, 101, 102, 103, 104], // Blue
     P2: [300, 301, 302, 303, 304], // Yellow
     P3: [200, 201, 202, 203, 204], // Green
-    P4: [400, 401, 402, 403, 404]  // Blue
+    P1: [400, 401, 402, 403, 404]  // Red
 };
-const HOME_POSITIONS = { P1: 105, P2: 305, P3: 205, P4: 405 };
-const TURNING_POINTS = { P1: 50, P2: 11, P3: 24, P4: 37 };
+const HOME_POSITIONS = { P1: 405, P2: 305, P3: 205, P4: 105 };
+const TURNING_POINTS = { P1: 37, P2: 11, P3: 24, P4: 50 };
 const SAFE_POSITIONS = [0, 8, 13, 21, 26, 34, 39, 47];
 const PLAYER_COLORS = { P1: '#ff0000', P2: '#ffff00', P3: '#00ff00', P4: '#0000ff' };
 const PLAYER_POKEMON = {
@@ -217,7 +217,7 @@ const Ludo = () => {
                     <div className="text-center">
                         <p className="text-white/40 text-xs uppercase tracking-widest font-bold mb-2">Turn</p>
                         <div className="px-6 py-2 rounded-full font-black text-xl shadow-lg border-2 border-white/20"
-                             style={{ backgroundColor: PLAYER_COLORS[currentPlayer], color: turn === 1 || turn === 3 ? 'black' : 'white' }}>
+                             style={{ backgroundColor: PLAYER_COLORS[currentPlayer], color: turn === 1 || turn === 2 ? 'black' : 'white' }}>
                             {currentPlayer}
                         </div>
                     </div>
@@ -229,7 +229,7 @@ const Ludo = () => {
                     <div className="grid grid-cols-2 gap-3 w-full">
                         {PLAYERS.map((player, idx) => (
                             <button key={player} className="p-roll" disabled={turn !== idx || diceRolled || isMoving}
-                                    style={{ backgroundColor: PLAYER_COLORS[player], color: idx === 1 || idx === 3 ? 'black' : 'white' }}
+                                    style={{ backgroundColor: PLAYER_COLORS[player], color: idx === 1 || idx === 2 ? 'black' : 'white' }}
                                     onClick={() => onDiceRoll(idx)}>
                                 ROLL
                             </button>

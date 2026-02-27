@@ -71,7 +71,7 @@ export default function Hangman() {
         const details = await Promise.all(promises);
         const fullList = details.map((r) => ({
           name: r.data.name,
-          image: r.data.sprites.front_default || "pikachu.png",
+          image: r.data.sprites.other["official-artwork"].front_default || r.data.sprites.front_default || "/images/pikachu.png",
         }));
         setPokemonList(fullList);
         pickRandomPokemon(fullList);
@@ -147,7 +147,7 @@ export default function Hangman() {
             <img
               src={currentPokemon.image}
               alt={currentPokemon.name}
-              loading="lazy"
+              loading="eager"
               onError={(e) => (e.target.src = "/images/pikachu.png")}
               className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4 drop-shadow-lg"
             />
