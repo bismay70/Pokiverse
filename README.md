@@ -4,7 +4,20 @@
   <img src="./public/screenshot.png" alt="Project screenshot" width="800" style="max-width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15)" />
 </p>
 
-> A fun-themed pokemon game app built with **React** and **Vite** — play Hangman,candy-Crush and matching in pokemon flavour.
+> A premium pokemon-themed gaming hub built with **React** and **Vite**. Experience high-energy mini-games including **PokeLudo**, **Hangman**, **PokeCrush**, and **Memorite**.
+
+<p align="center">
+  <table align="center">
+    <tr>
+      <td><img src="./public/images/hangman.png" width="400" alt="Hangman" /></td>
+      <td><img src="./public/images/memorite.png" width="400" alt="Memorite" /></td>
+    </tr>
+    <tr>
+      <td><img src="./public/images/candy.png" width="400" alt="PokeCrush" /></td>
+      <td><img src="./public/images/ludo.png" width="400" alt="PokeLudo" /></td>
+    </tr>
+  </table>
+</p>
 
 ---
 
@@ -58,6 +71,14 @@ yarn preview
 - `src/` — React components and styles
 - `public/` — static assets
 - `package.json` — scripts & dependencies
+
+---
+
+## 🕹️ Premium Gaming About Page
+<p align="center">
+  <img src="./public/images/pokedex.png" width="500" alt="Pokedex" />
+</p>
+<p align="center"><i>Featuring high-end animations and a futuristic Pokedex-themed interface.</i></p>
 
 ---
 
