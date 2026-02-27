@@ -27,9 +27,9 @@ const App = () => {
 
   const games = [
     { name: 'Hangman', component: Hangman, color: 'blue',img:"/images/hangman.png",p:<p className="text-gray-300 mb-8">Classic pokemon name guessing game </p> },
-    { name: 'PokeCrush', component: PokeCrush, color: 'purple',img:"/images/candy.jpeg",p: <p className="text-gray-300 mb-8">Match Pokemon in this exciting puzzle game!</p>},
+    { name: 'PokeCrush', component: PokeCrush, color: 'purple',img:"/images/candy.png",p: <p className="text-gray-300 mb-8">Match Pokemon in this exciting puzzle game!</p>},
     { name: 'Memorite', component: Memorite, color: 'green',img:"/images/ball.png" ,p: <p className="text-gray-300 mb-8">Challenge your memory with this engaging game!</p>},
-    { name: 'Pokemon Ludo', component: Ludo, color: 'red', img: "/images/ludo.png", p: <p className="text-gray-300 mb-8">Play the classic Ludo game with a Pokemon twist!</p> }
+    { name: 'PokeLudo', component: Ludo, color: 'red', img: "/images/ludo.png", p: <p className="text-gray-300 mb-8">Play the classic Ludo game with a Pokemon twist!</p> }
   ];
 
   const handleGameSelect = (game) => {
@@ -55,12 +55,12 @@ const GamesPage = () => {
           Choose Your Game
         </h1>
 
-        <div className="grid grid-cols-3 max-lg:grid-cols-1 gap-8 w-full">
+        <div className="grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 gap-8 w-full">
           {games.map((game) => (
             <div
               key={game.name}
-              className="rounded-[32px] p-6 flex flex-col justify-between shadow-lg"
-              style={{ backgroundColor: game.color === 'blue' ? '#8B0000' : game.color === 'purple' ? '#990000' : '#6B0F0F' }}
+              className="rounded-[32px] p-6 flex flex-col justify-between shadow-lg border border-white/5 hover:border-red-500/30 transition-all duration-300"
+              style={{ backgroundColor: game.color === 'blue' ? '#8B0000' : game.color === 'purple' ? '#8B0000' : game.color === 'green' ? '#8B0000' : '#8B0000' }}
             >
            
               <div className="flex justify-between items-center mb-4">
