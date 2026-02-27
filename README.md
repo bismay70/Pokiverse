@@ -1,4 +1,4 @@
-# POKIVERSE — Pokemon Themed Fun Games (React + Vite) ⚡️
+# POKIVERSE — Pokemon Themed Fun Games  ⚡️
 
 <p align="center">
   <img src="./public/screenshot.png" alt="Project screenshot" width="800" style="max-width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.15)" />
@@ -74,13 +74,6 @@ yarn preview
 
 ---
 
-## 🕹️ Premium Gaming About Page
-<p align="center">
-  <img src="./public/images/pokedex.png" width="500" alt="Pokedex" />
-</p>
-<p align="center"><i>Featuring high-end animations and a futuristic Pokedex-themed interface.</i></p>
-
----
 
 ## 🛠️ Technologies
 
