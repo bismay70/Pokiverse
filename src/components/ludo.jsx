@@ -1,27 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
-// --- Constants ---
 const COORDINATES_MAP = {
-    // P1 (Red)
     0: [6, 13], 1: [6, 12], 2: [6, 11], 3: [6, 10], 4: [6, 9],
-    // P3 (Blue)
     5: [5, 8], 6: [4, 8], 7: [3, 8], 8: [2, 8], 9: [1, 8], 10: [0, 8],
     11: [0, 7], 12: [0, 6], 13: [1, 6], 14: [2, 6], 15: [3, 6], 16: [4, 6], 17: [5, 6],
-    // P2 (Green)
     18: [6, 5], 19: [6, 4], 20: [6, 3], 21: [6, 2], 22: [6, 1], 23: [6, 0],
     24: [7, 0], 25: [8, 0], 26: [8, 1], 27: [8, 2], 28: [8, 3], 29: [8, 4], 30: [8, 5],
-    // P4 (Yellow)
     31: [9, 6], 32: [10, 6], 33: [11, 6], 34: [12, 6], 35: [13, 6], 36: [14, 6],
     37: [14, 7], 38: [14, 8], 39: [13, 8], 40: [12, 8], 41: [11, 8], 42: [10, 8], 43: [9, 8],
-    // P1 Return
     44: [8, 9], 45: [8, 10], 46: [8, 11], 47: [8, 12], 48: [8, 13], 49: [8, 14],
     50: [7, 14], 51: [6, 14],
-    // HOME ENTRANCE
     100: [7, 13], 101: [7, 12], 102: [7, 11], 103: [7, 10], 104: [7, 9], 105: [7, 8],
     200: [7, 1], 201: [7, 2], 202: [7, 3], 203: [7, 4], 204: [7, 5], 205: [7, 6],
     300: [1, 7], 301: [2, 7], 302: [3, 7], 303: [4, 7], 304: [5, 7], 305: [6, 7],
     400: [13, 7], 401: [12, 7], 402: [11, 7], 403: [10, 7], 404: [9, 7], 405: [8, 7],
-    // BASE POSITIONS
     500: [1.5, 10.58], 501: [3.57, 10.58], 502: [1.5, 12.43], 503: [3.57, 12.43],
     600: [10.5, 1.58], 601: [12.54, 1.58], 602: [10.5, 3.45], 603: [12.54, 3.45],
     700: [1.5, 1.58], 701: [3.57, 1.58], 702: [1.5, 3.45], 703: [3.57, 3.45],
@@ -32,26 +24,26 @@ const STEP_LENGTH = 6.66;
 const PLAYERS = ['P1', 'P2', 'P3', 'P4'];
 const BASE_POSITIONS = {
     P1: [500, 501, 502, 503],
-    P2: [600, 601, 602, 603],
-    P3: [700, 701, 702, 703],
+    P2: [700, 701, 702, 703],
+    P3: [600, 601, 602, 603],
     P4: [800, 801, 802, 803],
 };
-const START_POSITIONS = { P1: 0, P3: 13, P2: 26, P4: 39 };
+const START_POSITIONS = { P1: 0, P2: 13, P3: 26, P4: 39 };
 const HOME_ENTRANCE = {
     P1: [100, 101, 102, 103, 104],
-    P2: [200, 201, 202, 203, 204],
-    P3: [300, 301, 302, 303, 304],
+    P2: [300, 301, 302, 303, 304],
+    P3: [200, 201, 202, 203, 204],
     P4: [400, 401, 402, 403, 404]
 };
-const HOME_POSITIONS = { P1: 105, P2: 205, P3: 305, P4: 405 };
-const TURNING_POINTS = { P1: 50, P3: 11, P2: 24, P4: 37 };
+const HOME_POSITIONS = { P1: 105, P2: 305, P3: 205, P4: 405 };
+const TURNING_POINTS = { P1: 50, P2: 11, P3: 24, P4: 37 };
 const SAFE_POSITIONS = [0, 8, 13, 21, 26, 34, 39, 47];
-const PLAYER_COLORS = { P1: '#ff0000', P2: '#00ff00', P3: '#0000ff', P4: '#ffff00' };
+const PLAYER_COLORS = { P1: '#ff0000', P2: '#ffff00', P3: '#00ff00', P4: '#0000ff' };
 const PLAYER_POKEMON = {
-    P1: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png', // Charmander
-    P2: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png', // Bulbasaur
-    P3: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png', // Squirtle
-    P4: '/images/pikachu.png' // Pikachu (using local asset if available)
+    P4: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
+    P2: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
+    P3: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
+    P1: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
 };
 
 const Ludo = () => {
@@ -146,7 +138,6 @@ const Ludo = () => {
             if (allHome) { alert(`Player ${player} Won!`); resetGame(); return; }
         }
 
-        // Kill logic
         let killed = false;
         if (!SAFE_POSITIONS.includes(pos)) {
             const nextPositions = { ...currentPositions };
@@ -221,7 +212,6 @@ const Ludo = () => {
                         );
                     }))}
                 </div>
-
 
                 <div className="flex flex-col items-center gap-6 min-w-[200px]">
                     <div className="text-center">

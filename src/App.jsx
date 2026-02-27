@@ -110,8 +110,6 @@ const GamesPage = () => {
         return <HomePage />;
     }
   };
-  // bg-radial-[at_25%_25%] from-black to-blue-800 to-75%
-  // bg-gradient-to-r from-red-500 via-gray-900 to-white
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-black via-red-950 to-red-800 flex flex-col">
@@ -126,7 +124,6 @@ const GamesPage = () => {
       <main className="flex-grow">
         {renderCurrentPage()}
       </main>
-      {/* Remove global Games rendering; Games shows within Home now */}
       <Footer />
     </div>
   );

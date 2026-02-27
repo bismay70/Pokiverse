@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-// Use public asset via root-served URL (do not import from /public)
 const ProfilePhoto = "/images/ball.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +20,6 @@ const ClientPage = ({ setCurrentRoute }) => {
 
   return (
     <section className="w-full min-h-screen py-[200px] max-lg:py-[70px] max-md:py-[60px] max-sm:py-[80px] bg-gradient-to-r from-black via-red-950 to-red-800 flex justify-center items-center flex-col relative overflow-hidden">
-      {/* Decorative background elements */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-red-600/10 blur-[120px] rounded-full"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-900/20 blur-[120px] rounded-full"></div>
 
