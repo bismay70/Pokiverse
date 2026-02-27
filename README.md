@@ -21,83 +21,65 @@
 
 ---
 
-## 🚀 Key Features
+## 🚀 Game Highlights
 
-- **Responsive** UI that looks great on desktop and mobile
-- **Fast development** with Vite HMR and minimal setup
-- **ESLint** + sensible defaults for clean code
-
----
-
-## ⚙️ Local Setup
-
-1. Install dependencies
-
-```bash
-npm install
-# or
-yarn
-```
-
-2. Run the dev server
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-3. Build for production
-
-```bash
-npm run build
-# or
-yarn build
-```
-
-4. Preview the production build
-
-```bash
-npm run preview
-# or
-yarn preview
-```
+- **PokeLudo**: A strategic 4-player board game. Choose your starter Pokémon and race to the finish line with custom turn-based mechanics.
+- **PokeCrush**: Fast-paced match-3 puzzle action. Trigger powerful Pokémon combos and clear the board.
+- **Hangman**: Test your Pokémon knowledge! Guess the names correctly to save your Pokémon companions.
+- **Memorite**: Sharpen your mind with this Pokémon card-matching memory challenge.
 
 ---
 
-## 🗂️ Project Structure (high level)
+## 🛠️ Key Features
 
-- `index.html` — app entry
-- `src/` — React components and styles
-- `public/` — static assets
-- `package.json` — scripts & dependencies
+- **Premium UI**: Dark-themed, high-energy gaming aesthetic with GSAP animations.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop gaming.
+- **Smooth Performance**: Built on React 19 + Vite for ultra-fast load times and HMR.
+- **Pokedex About Page**: Interactive and animated informational section.
 
 ---
 
+## 🗂️ Project Structure
+
+```text
+pokiverse/
+├── public/                # Global static assets (videos, game assets)
+│   ├── images/            # Game thumbnails and icons
+│   └── videos/            # High-quality background visuals
+├── src/
+│   ├── components/        # Game modules & UI sections
+│   │   ├── ludo.jsx       # Consolidated Ludo core
+│   │   ├── games.jsx      # Dynamic games lobby
+│   │   └── ...            # Modular UI components
+│   ├── App.jsx            # Core routing and global state
+│   ├── index.css          # Tailwind & custom design tokens
+│   └── main.jsx           # Application entry point
+├── package.json           # Dependencies and build scripts
+└── README.md              # Project documentation
+```
+
+---
 
 ## 🛠️ Technologies
 
 - **React** (v19) — UI library
-- **Vite** — dev server & build tooling
-- **Tailwind CSS** — utility-first CSS framework
-- **GSAP** & **@gsap/react** — animations
-- **axios** — HTTP client for API requests
-- **react-router-dom** — client-side routing
-- **lucide-react** — icon set
-- **react-responsive** — responsive helpers
-- **ESLint** + related plugins — linting and code quality
+- **Vite** — High-performance build tool
+- **Tailwind CSS** — Modern styling framework
+- **GSAP** & **@gsap/react** — Professional-grade animations
+- **Lucide React** — Premium icon set
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you add features or polish the UI, please open a PR with a short description of your changes.
+Contributions are always welcome! Feel free to fork the repo and submit PRs for new games or UI polish.
 
 ---
 
-## 📄 License
+## 📄 License & Credits
 
-This project uses the default repository license. Add a `LICENSE` file or update this section with your preferred license.
+Distributed under the **MIT License**. See `LICENSE` for more information.  
+*Pokémon assets are used for educational/fan purposes.*
 
 ---
 

@@ -23,27 +23,27 @@ const COORDINATES_MAP = {
 const STEP_LENGTH = 6.66;
 const PLAYERS = ['P1', 'P2', 'P3', 'P4'];
 const BASE_POSITIONS = {
-    P1: [500, 501, 502, 503],
-    P2: [700, 701, 702, 703],
-    P3: [600, 601, 602, 603],
-    P4: [800, 801, 802, 803],
+    P1: [500, 501, 502, 503], // Red (Bottom-Left)
+    P2: [700, 701, 702, 703], // Yellow (Top-Left)
+    P3: [600, 601, 602, 603], // Green (Top-Right)
+    P4: [800, 801, 802, 803], // Blue (Bottom-Right)
 };
 const START_POSITIONS = { P1: 0, P2: 13, P3: 26, P4: 39 };
 const HOME_ENTRANCE = {
-    P1: [100, 101, 102, 103, 104],
-    P2: [300, 301, 302, 303, 304],
-    P3: [200, 201, 202, 203, 204],
-    P4: [400, 401, 402, 403, 404]
+    P1: [100, 101, 102, 103, 104], // Red
+    P2: [300, 301, 302, 303, 304], // Yellow
+    P3: [200, 201, 202, 203, 204], // Green
+    P4: [400, 401, 402, 403, 404]  // Blue
 };
 const HOME_POSITIONS = { P1: 105, P2: 305, P3: 205, P4: 405 };
 const TURNING_POINTS = { P1: 50, P2: 11, P3: 24, P4: 37 };
 const SAFE_POSITIONS = [0, 8, 13, 21, 26, 34, 39, 47];
 const PLAYER_COLORS = { P1: '#ff0000', P2: '#ffff00', P3: '#00ff00', P4: '#0000ff' };
 const PLAYER_POKEMON = {
-    P4: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
-    P2: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
-    P3: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
-    P1: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
+    P1: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png', // Charmander (Red)
+    P2: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png', // Pikachu (Yellow)
+    P3: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png', // Bulbasaur (Green)
+    P4: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png', // Squirtle (Blue)
 };
 
 const Ludo = () => {
